@@ -1,0 +1,250 @@
+/* ============================================================
+   AUTH PAGES — SHARED STYLES
+   (login, register, forgot-password, facebook, google)
+   ============================================================ */
+
+body {
+    background: url('../background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    backdrop-filter: brightness(0.7);
+}
+
+.login-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+    width: 420px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* -------- Header -------- */
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header i {
+    font-size: 50px;
+    color: #00695C;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    color: #00695C;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* -------- Inputs -------- */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 12px 15px;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    border-color: #00695C;
+    box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.2);
+    outline: none;
+}
+
+.input-group .form-control {
+    border-radius: 12px 0 0 12px;
+}
+
+.input-group .btn-toggle-password {
+    border-radius: 0 12px 12px 0;
+    border: 1px solid #e2e8f0;
+    border-left: none;
+    background: white;
+    color: #00695C;
+    padding: 0 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group .btn-toggle-password:hover {
+    background: #f8f9fa;
+    color: #00897B;
+}
+
+/* -------- Submit button -------- */
+.btn-login {
+    background: linear-gradient(135deg, #00695C 0%, #00897B 100%);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 40px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 105, 92, 0.3);
+    color: white;
+}
+
+/* -------- Alerts -------- */
+.alert {
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* -------- Labels / spacing -------- */
+.form-label {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+/* -------- Forgot link -------- */
+.forgot-link {
+    color: #00695C;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.forgot-wrapper {
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+/* -------- Placeholders -------- */
+input.form-control::placeholder {
+    font-size: 0.85rem;
+}
+
+/* -------- Social login -------- */
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: #ddd;
+}
+
+.social-login p::before { left: 0; }
+.social-login p::after  { right: 0; }
+
+.btn-social {
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-weight: 600;
+    margin: 0 5px;
+    border: none;
+    transition: all 0.2s;
+    width: 45%;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-social i { margin-right: 8px; }
+
+.btn-facebook { background: #1877f2; color: white; }
+.btn-facebook:hover { background: #166fe5; transform: translateY(-2px); color: white; }
+
+.btn-google { background: #ea4335; color: white; }
+.btn-google:hover { background: #d33426; transform: translateY(-2px); color: white; }
+
+/* -------- Tabs (used on register page) -------- */
+.nav-tabs {
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+    color: #666;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.nav-tabs .nav-link:hover {
+    border-bottom-color: #00695C;
+    color: #00695C;
+}
+
+.nav-tabs .nav-link.active {
+    color: #00695C;
+    border-bottom-color: #00695C;
+    background: none;
+}
+
+/* -------- Inline validation -------- */
+.invalid-feedback {
+    display: block;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 576px) {
+    .login-container {
+        width: 95%;
+        padding: 25px;
+    }
+    .btn-social {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

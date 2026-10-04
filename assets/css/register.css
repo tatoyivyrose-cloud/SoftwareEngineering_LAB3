@@ -1,0 +1,26 @@
+/* Register page — only extra rules (auth.css provides the rest) */
+.register-container {
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-right: 35px;
+}
+
+.register-container::-webkit-scrollbar { width: 8px; }
+.register-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; margin: 10px 0; }
+.register-container::-webkit-scrollbar-thumb { background: #00695C; border-radius: 10px; }
+
+.row .col-md-6 { padding-right: 7px; }
+.row .col-md-6:last-child { padding-left: 7px; padding-right: 0; }
+
+.modal-confirm-btn {
+    background: linear-gradient(135deg, #00695C 0%, #00897B 100%);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 40px;
+}
+.modal-confirm-btn:hover { background: #004d40; }
+
+.modal-header { border-bottom: 2px solid #e9ecef; background: #f8f9fa; border-radius: 20px 20px 0 0; }
+.modal-body { padding: 30px; }
+.modal-footer { border-top: 1px solid #e9ecef; padding: 15px 25px; }
