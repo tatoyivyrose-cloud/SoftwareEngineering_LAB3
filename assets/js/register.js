@@ -71,12 +71,20 @@ function validateRegisterForm() {
     for (const key in errors) {
         const input = fieldMap[key];
         if (!input) continue;
+
         input.classList.add('is-invalid');
+
         const feedback = document.createElement('div');
         feedback.className = 'invalid-feedback dynamic';
         feedback.textContent = errors[key];
-        const parent = input.closest('.input-group') || input.parentNode;
-        parent.parentNode.insertBefore(feedback, parent.nextSibling);
+
+        // Find the correct column to place the error inside
+        const parent = input.closest('.input-group')
+            ? input.closest('.input-group').parentNode
+            : input.parentNode;
+
+        // Append the error INSIDE the column instead of next to it
+        parent.appendChild(feedback);
     }
 
     return Object.keys(errors).length === 0;
