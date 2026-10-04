@@ -148,44 +148,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'regis
             margin-top: 12px;
         }
 
-        /* Error toasts (5s auto-dismiss) */
+        /* Error toasts (5s auto-dismiss) — centered over the form */
         .toast-stack {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 1080;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 10px;
+            width: min(340px, calc(100vw - 40px));
             pointer-events: none;
         }
         .error-toast {
             pointer-events: auto;
-            min-width: 260px;
-            max-width: 340px;
+            width: 100%;
             background: #fff;
             border-left: 4px solid #dc3545;
             border-radius: 8px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, .15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
             padding: 12px 14px;
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            animation: toastIn .25s ease forwards;
+            transform-origin: center center;
+            animation: toastIn .22s cubic-bezier(.34, 1.4, .64, 1) forwards;
         }
-        .error-toast.hide { animation: toastOut .25s ease forwards; }
+        .error-toast.hide { animation: toastOut .2s ease forwards; }
         .error-toast i { color: #dc3545; font-size: 1.1rem; margin-top: 2px; }
         .error-toast .msg { flex: 1 1 auto; font-size: .9rem; color: #333; line-height: 1.35; }
         .error-toast .msg strong {
             display: block; font-size: .85rem; color: #b02a37; margin-bottom: 2px;
         }
         @keyframes toastIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to   { opacity: 1; transform: translateX(0); }
+            from { opacity: 0; transform: scale(.85); }
+            to   { opacity: 1; transform: scale(1); }
         }
         @keyframes toastOut {
-            from { opacity: 1; transform: translateX(0); }
-            to   { opacity: 0; transform: translateX(20px); }
+            from { opacity: 1; transform: scale(1); }
+            to   { opacity: 0; transform: scale(.85); }
         }
     </style>
 </head>
